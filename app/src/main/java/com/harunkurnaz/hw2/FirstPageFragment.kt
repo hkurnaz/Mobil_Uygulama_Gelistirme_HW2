@@ -41,7 +41,7 @@ class FirstPageFragment : Fragment() {
                 binding.etDescription.text.clear()
             } else {
                 // Tüm alanların doldurulması gerektiğini belirten bir uyarı göster
-                Toast.makeText(requireContext(), "Tüm alanları doldurun", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Fill all the blanks", Toast.LENGTH_SHORT).show()
             }
         }
     }

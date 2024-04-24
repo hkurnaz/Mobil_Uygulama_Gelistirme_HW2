@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homePageFragment">
-
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.harunkurnaz.hw2.HomePageFragment"
@@ -12,12 +11,10 @@
         tools:layout="@layout/fragment_home_page" >
         <action
             android:id="@+id/action_homePageFragment_to_firstPageFragment"
-            app:destination="@id/firstPageFragment"
-            app:launchSingleTop="false" />
+            app:destination="@id/firstPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/firstPageFragment"
-        android:name="com.harunkurnaz.hw2.FirstPageFragment"
-        android:label="fragment_first_page"
-        tools:layout="@layout/fragment_first_page" />
+        android:name="FirstPageFragment"
+        android:label="FirstPageFragment" />
 </navigation>

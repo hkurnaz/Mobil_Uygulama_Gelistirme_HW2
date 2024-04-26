@@ -1,12 +1,14 @@
+package com.harunkurnaz.hw2
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.harunkurnaz.hw2.ToDoDataModel // Assuming this is your custom data class
-import com.harunkurnaz.hw2.ToDoAdapter // Assuming this is your custom adapter
-import android.widget.Toast
+import com.harunkurnaz.hw2.ToDoDataModel
+import com.harunkurnaz.hw2.ToDoAdapter
 import com.harunkurnaz.hw2.databinding.FragmentFirstPageBinding
 
 class FirstPageFragment : Fragment() {
@@ -36,11 +38,11 @@ class FirstPageFragment : Fragment() {
             if (title.isNotBlank() && description.isNotBlank()) {
                 val newItem = ToDoDataModel(title, description)
                 todoList.add(newItem)
-                adapter.notifyDataSetChanged()
+                adapter.notifyItemInserted(todoList.size - 1)
+
                 binding.etTitle.text.clear()
                 binding.etDescription.text.clear()
             } else {
-                // Tüm alanların doldurulması gerektiğini belirten bir uyarı göster
                 Toast.makeText(requireContext(), "Fill all the blanks", Toast.LENGTH_SHORT).show()
             }
         }
